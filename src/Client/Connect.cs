@@ -6,11 +6,9 @@ namespace src.Client
 {
     public class Connect
     {
-        public async Task ConnectClient()
+        public async Task ConnectClient(IPEndPoint ipEndPoint)
         {
             var clientID = Guid.NewGuid().ToString();
-
-            IPEndPoint ipEndPoint = new(IPAddress.Parse("127.0.0.1"), 11_000);
 
             using Socket client = new(
                 ipEndPoint.AddressFamily,

@@ -7,10 +7,8 @@ namespace src.Server
 
     public class Create
     {
-        public async Task CreateServer()
+        public async Task CreateServer(IPEndPoint ipEndPoint)
         {
-
-            IPEndPoint ipEndPoint = new(IPAddress.Parse("127.0.0.1"), 11_000);
 
             using Socket listener = new(
                 ipEndPoint.AddressFamily,
